@@ -9,13 +9,17 @@ export default {
   	extend: {
   		colors: {
   			primary: '#451da0',
-  			secondary: '#8b5cf6'
+  			secondary: '#8b5cf6',
+			highlight:"#2c95ff"
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		container:{
+			padding:0
+		}
   	},
   	container: {
   		center: true,
