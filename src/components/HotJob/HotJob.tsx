@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
    Pagination,
    PaginationContent,
@@ -9,8 +9,54 @@ import {
    PaginationNext,
 } from "../ui/pagination";
 import { ListJob } from "../Jobs/ListJob";
+import {
+   Carousel,
+   CarouselContent,
+   CarouselNext,
+   CarouselPrevious,
+} from "../ui/carousel";
+import { IJob } from "@/interface/IJob";
 
 export const HotJob = () => {
+   // call API để lấy job
+   const jobList: IJob[] = [
+      {
+         id: 1,
+         title: "Software Engineer",
+         salary: 120000,
+         recruitment_quantity: 5,
+         benefits: "Health insurance, Remote work, Stock options",
+         job_description:
+            "Develop and maintain web applications using modern technologies.",
+         application_deadline: new Date("2025-03-15"),
+         is_Hidden: false,
+         gender: true, // true: Male, false: Female  
+      },
+      {
+         id: 2,
+         title: "Marketing Manager",
+         salary: 80000,
+         recruitment_quantity: 3,
+         benefits: "Flexible work hours, Annual bonus, Travel allowances",
+         job_description:
+            "Plan and execute marketing campaigns to drive company growth.",
+         application_deadline: new Date("2025-04-01"),
+         is_Hidden: false,
+         gender: false,
+      },
+      {
+         id: 3,
+         title: "Data Analyst",
+         salary: 95000,
+         recruitment_quantity: 4,
+         benefits: "401(k) match, Gym membership, Free lunch",
+         job_description: "Analyze data trends and provide business insights.",
+         application_deadline: new Date("2025-05-10"),
+         is_Hidden: false,
+         gender: true,
+      },
+   ];
+   
    return (
       <div className="py-6 bg-[#f6f9ff]">
          <div className="container ">
@@ -62,8 +108,7 @@ export const HotJob = () => {
                </svg>
                <p className="text-2xl font-medium">Việc làm tuyển gấp</p>
             </div>
-
-            <ListJob></ListJob>
+            <ListJob jobs={jobList} type="row"></ListJob>
 
             <Pagination className="mt-6">
                <PaginationContent>
